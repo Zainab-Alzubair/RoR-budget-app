@@ -3,19 +3,19 @@ class PaymentsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user
 
-  def index 
+  def index
     @group_uniq = Group.find(params[:group_id])
     @payments = Payment.where(author_id: @user.id).order(created_at: :desc)
     @group = Payment.order(created_at: :desc).joins(:groups).pluck(:'groups.icon')
     @payment_sum = @payments.sum(:amount)
   end
 
-  def show 
+  def show
     @payment = Payment.find(params[:id])
     @group = Group.find(params[:group_id])
   end
 
-  def new 
+  def new
     @group = Group.find(params[:group_id])
     @payment = Payment.new
   end
@@ -31,7 +31,7 @@ class PaymentsController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @group_uniq = Group.find(params[:group_id])
     @payment = Payment.find(params[:id])
     if @payment.destroy

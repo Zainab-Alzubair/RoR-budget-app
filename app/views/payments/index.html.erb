@@ -13,24 +13,24 @@
     @group_totals = @groups.to_h { |group| [group.id, group.payments.sum(:amount)] }
     %>
     <p style="margin: 5px; font-size: 16px; text-align:center">
-    <span style="margin: 5px; font-size: 20px; font-weight: 100; margin-right: 10px">Amount of in this category :</span>  $<%= @group_totals&.[](@group_uniq.id) %>
+     <span style="margin: 5px; font-size: 20px; font-weight: 100; margin-right: 10px">Amount of in this category :</span>  $<%= @group_totals&.[](@group_uniq.id) %>
     </p>
 </div>
-<p class="notice"><%= notice %></p>
+ <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 <% @payments.each_with_index do |payment, index| %>
 
-  <div class="container-pic">
-    <img src="<%= @group[index] %>" >
-    <div class="name-time">
-      <h2><%= payment.name %></h2>
-      <p class="time-and-date">
+   <div class="container-pic">
+     <img src="<%= @group[index] %>" >
+     <div class="name-time">
+       <h2><%= payment.name %></h2>
+       <p class="time-and-date">
         <%= payment.created_at.strftime('%d %b %y') %>
       </p>
-    </div>
-    <p class="amount-dolar">$<%= payment.amount %>0</p>
-    <%= button_to "" , "/groups/" + @group_uniq.id.to_s + "/payments/" + payment.id.to_s, method: :delete , class:"fa fa-trash", style:"color:red; font-size: 16px; margin-right: 5px; background-color:#fff; border:none; cursor:pointer" %>
-  </div>
+     </div>
+     <p class="amount-dolar">$<%= payment.amount %>0</p>
+     <%= button_to "" , "/groups/" + @group_uniq.id.to_s + "/payments/" + payment.id.to_s, method: :delete , class:"fa fa-trash", style:"color:red; font-size: 16px; margin-right: 5px; background-color:#fff; border:none; cursor:pointer" %>
+   </div>
 <%end%>
 
 

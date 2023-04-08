@@ -1,16 +1,16 @@
 <div class="login-page">
 <div class="login-header">
   <a href=<%= group_payments_path(@group) %> >
-  <i class="fa fa-arrow-left" style="color:white; font-size: 18px; margin-left:20px" ></i>
+   <i class="fa fa-arrow-left" style="color:white; font-size: 18px; margin-left:20px" ></i>
   </a>
 <h2 style="color:white; font-size: 20px; margin-right: 80px">Add a new transaction</h2>
 <p style="color:white; font-size: 24px"></p>
 </div>
-  <p class="notice"><%= notice %></p>
+   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= form_with(model: [@group, @payment], url: group_payments_path(@group)) do |form| %>
 
-    <br>
+     <br>
     <div class="field">
       <%= form.text_field :name, required: true, placeholder: "Expense name", class:"input-form"  %>
     </div>

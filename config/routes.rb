@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :groups, only: [:new, :create, :index, :show, :destroy] do
     resources :payments, only: [:new, :create, :index, :show, :destroy]
   end
+  resources :splashs, only: [:index]
   root "groups#index"
 end
