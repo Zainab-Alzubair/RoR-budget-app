@@ -56,7 +56,8 @@ The Recipe App was built with:
 ### Live Demo <a name="live-demo"></a>
 
 [Live Demo](https://rails-deploying-app.herokuapp.com/)
-[Presentation](https:/)
+
+[Presentation](https://www.loom.com/share/a3691e2db5164f97bb939b41bdde849f)
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
