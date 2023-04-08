@@ -7,7 +7,7 @@ gem 'pg'
 
 gem 'devise'
 
-gem 'cancancan', '~> 1.9'
+gem 'cancancan', '~> 3.2'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
