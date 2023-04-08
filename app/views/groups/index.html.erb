@@ -1,31 +1,28 @@
-<div class="sign-main">
-  <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "devise-button" %>
-  <% if user_signed_in? %>
-    <p class="logged-as">Logged in as <%= current_user.try(:name) %></p>
-  <% end %>
-  <% unless user_signed_in? %>
-  <button class="devise-button">
-    <%= link_to "Log in", new_user_session_path, class: "link-login"%>
-  </button>
-  <% end %>
+<div class="login-page">
+<div class="login-header" style=" display: flex; justify-content: space-between;width: 100%; text-align:center; margin: auto;">
+<a href=<%= destroy_user_session_path method: :delete %>>
+<i class="fa fa-arrow-left" style="color:white; font-size: 18px; margin-left:20px" >
+</i>
+</a>
+<h2 style="color:white; font-size: 20px;font-weight:100; text-align:center">Catagories</h2>
+<p style="color:white; font-size: 24px"></p>
 </div>
-
-<div class="recipes-container">
-  <% @groups.each do |group| %>
-  <div class="recipe-card">
-    <div class="recipe-title">
-      <h2 class="recipe_name"><%= link_to group.name, group_path(id: group.id) %></h2>
-      <% if can? :destroy && user_signed_in? , group %>
-        <%= button_to "Remove", group_path(id: group.id), data: { turbo_method: :delete }, method: :delete, "turbo-frame": "groups" , class: "btn-all" %>
-      <% end %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% @groups.each do |group| %>
+  <a class="container-pic" href=<%= group_path(group) %>>
+    <img src="<%= group.icon %>" />
+    <div class="name-time">
+      <h2><%= group.name %></h2>
+      <p class="time-and-date">
+        <%= group.created_at.strftime('%d %b %y') %>
+      </p>
     </div>
-  </div>
-  <% end %>
-
-
-  <div class="add-recipe">
-    <button class="btn-all add-recipe"><%= link_to "Add group", new_group_path %></button>
-  </div>
+    <p class="amount-dolar">$<%= @group_totals&.[](group.id) %>0</p>
+  </a>
+  
+<%end%>
+<div class="add-new-item">
+<%= link_to "Add Catagories", new_group_path ,class:"add-new"%>
 </div>
-
-<%# <%= truncate(recipe.description, length: 40, omission: "...") %> 
+</div>

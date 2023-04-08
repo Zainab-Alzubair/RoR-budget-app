@@ -5,11 +5,13 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.where(user_id: @user.id)
+    @group_totals = @groups.to_h { |group| [group.id, group.payments.sum(:amount)] }
   end
 
   def show
     @group = Group.find(params[:id])
     @payments = @group.payments
+    @payment_sum = @payments.sum(:amount)
   end
 
   def new
@@ -18,10 +20,21 @@ class GroupsController < ApplicationController
 
   def create
     @group = @user.groups.new(group_params)
-    if @group.save
-      redirect_to groups_path(id: @group.id), notice: 'group created successfully'
-    else
-      render :new, status: 400
+    respond_to do |format|
+      if @group.save
+        format.html { redirect_to groups_path, notice: 'Category was successfully created.' }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @group.destroy
+
+    respond_to do |format|
+      format.html { redirect_to groups_url, notice: 'Group was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

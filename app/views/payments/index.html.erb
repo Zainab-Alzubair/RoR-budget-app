@@ -1,0 +1,40 @@
+<div class="login-page">
+<div class="login-header" style=" display: flex; justify-content: space-between;width: 100%; text-align:center; margin: auto;">
+<a href=<%= groups_path method: :delete %>>
+<i class="fa fa-arrow-left" style="color:white; font-size: 16px; margin-left:20px" >
+</i>
+</a>
+<h2 style="color:white; font-size: 20px;font-weight:100; text-align:center">Transaction</h2>
+<p style="color:white; font-size: 24px"></p>
+</div>
+
+<div style="width:100%; background-color: white;box-shadow: 0px 3px 4px #ccc">
+<% @groups = Group.where(user_id: @user.id)
+    @group_totals = @groups.to_h { |group| [group.id, group.payments.sum(:amount)] }
+    %>
+    <p style="margin: 5px; font-size: 16px; text-align:center">
+    <span style="margin: 5px; font-size: 20px; font-weight: 100; margin-right: 10px">Amount of in this category :</span>  $<%= @group_totals&.[](@group_uniq.id) %>
+    </p>
+</div>
+<p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+<% @payments.each_with_index do |payment, index| %>
+
+  <div class="container-pic">
+    <img src="<%= @group[index] %>" >
+    <div class="name-time">
+      <h2><%= payment.name %></h2>
+      <p class="time-and-date">
+        <%= payment.created_at.strftime('%d %b %y') %>
+      </p>
+    </div>
+    <p class="amount-dolar">$<%= payment.amount %>0</p>
+    <%= button_to "" , "/groups/" + @group_uniq.id.to_s + "/payments/" + payment.id.to_s, method: :delete , class:"fa fa-trash", style:"color:red; font-size: 16px; margin-right: 5px; background-color:#fff; border:none; cursor:pointer" %>
+  </div>
+<%end%>
+
+
+<div class="add-new-item">
+<%= link_to "Add Transaction", new_group_payment_path ,class:"add-new"%>
+</div>
+</div>

@@ -1,26 +1,28 @@
 <div class="login-page">
+<div class="login-header" style=" display: flex; justify-content: speace-between;width: 100%; text-align:center; margin: auto;">
 <a href=<%= groups_path %> >
- <i class="fa fa-arrow-left" style="color:white; font-size: 16px; margin-left:20px" ></i>
+<i class="fa fa-arrow-left" style="color:white; font-size: 16px; margin-left:20px" ></i>
 </a>
 <h2 style="color:white; font-size: 18px; text-align:center">DETAILS</h2>
 <%= button_to "" , "/groups/" + @group.id.to_s, method: :delete , class:"fa fa-trash", style:"color:red; font-size: 18px; margin-right: 20px; background-color:#3f6ada; border:none; cursor:pointer" %>
- 
+
 </div>
- <p class="notice"><%= notice %></p>
- <p class="alert"><%= alert %></p>
-   <div class="container-details"> 
-     <div class="name-image">
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+  <div class="container-details"> 
+    <div class="name-image">
       <img src="<%= @group.icon %>" />
-       <h2><%= @group.name %></h2>
-     </div>
-     <div class="transaction-date">
-     
+      <h2><%= @group.name %></h2>
+    </div>
+    <div class="transaction-date">
+    
         <h2>Transaction</h2>
         <p class="time-and-date">
         <%= @group.created_at.strftime('%d %b %y') %>
       </p>
       </div>
-   </div>
+    <p class="amount-dolar-total"><span>Total Payment  </span>   $<%= @payment_sum %>0</p>
+  </div>
 <a href=<%= group_payments_path(@group) %>>
 <i class="fa fa-arrow-right" style="cursor: pointer;margin-top: 30px; color:red; font-size: 24px; margin-left:auto; margin-right:auto" >
 </i>
