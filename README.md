@@ -55,7 +55,7 @@ The Recipe App was built with:
 
 ### Live Demo <a name="live-demo"></a>
 
-[Live Demo](https://)
+[Live Demo](https://rails-deploying-app.herokuapp.com/)
 [Presentation](https:/)
 
 ## 💻 Getting Started <a name="getting-started"></a>
