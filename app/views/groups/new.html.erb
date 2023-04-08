@@ -1,0 +1,20 @@
+
+  <button class="btn-all" type="button"><%= link_to "Back to groups", groups_path%></button>
+
+
+<div class="new-recipe-container">
+<h1 class="title">New Group</h1>
+<div class="new-recipe">
+  <%= form_with model: @group, url: groups_path, local: true do |f| %>
+    <div>
+      <%= f.label :name, 'Recipe name'%><br>
+      <%= f.text_field :name,class: "input"%>
+    </div>
+     <br>
+    <div class="field">
+      <%= f.text_field :icon, required: true, placeholder: "Icon", class:"input-form" %>
+    </div>
+    <div class="back_food">
+      <%= f.submit "Create Group", class: "devise-button" %>
+    </div>
+  <% end %>
