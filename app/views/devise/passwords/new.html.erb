@@ -1,0 +1,22 @@
+<div class="login-page">
+<div class="login-header">
+  <a href=<%= splashs_path %> >
+   <i class="fa fa-arrow-left" style="color:white; font-size: 16px; margin-left:20px" ></i>
+  </a>
+<h2 style="color:white; font-size: 20px;font-weight:100; line-height:1.2; margin-right: 80px">Forgot your password?</h2>
+<p style="color:white; font-size: 24px"></p>
+</div>
+<br>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Email", class:"input-form" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Send me reset", style: "background-color: #3f6ada; margin: 5px; cursor:pointer;border:none; padding: 6px 12px" %>
+  </div>
+<% end %>
+
+</div>

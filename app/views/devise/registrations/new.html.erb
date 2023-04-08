@@ -1,0 +1,39 @@
+<div class="login-page">
+<div class="login-header">
+  <a href=<%= splashs_path %> >
+   <i class="fa fa-arrow-left" style="color:white; font-size: 16px; margin-left:20px" ></i>
+  </a>
+<h2 style="color:white; font-size: 20px;font-weight:100; line-height:1.2; margin-right: 80px">Registration</h2>
+<p style="color:white; font-size: 24px"></p>
+</div>
+<br>
+
+  
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+   <div class="field">
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" , placeholder:"Full Name" , class:"input-form" %>
+  </div>
+  
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" , placeholder:"Email" , class:"input-form" %>
+  </div>
+
+
+  <div class="field">
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password" , class:"input-form"%>
+  </div>
+  
+  <div class="field">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password Conformation" , class:"input-form" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up", class:"log-in-btn"%>
+  </div>
+<% end %>
+</div>

@@ -1,0 +1,262 @@
+
+/* @import "rails_bootstrap_forms"; */
+
+/* @import "font-awesome"; */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+  background: #f5f5f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container-splash {
+  width: 100%;
+  height: 100%;
+}
+
+.name-app {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-app p {
+  font-size: 50px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  text-align: center;
+}
+
+.div-button {
+  width: 98%;
+  position: absolute;
+  bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.div-button-primary {
+  background-color: #1a06b3;
+  width: 90%;
+  height: 50px;
+  border-radius: 5px;
+  margin-left: 3.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-button-light {
+  background-color: #fff;
+  width: 90%;
+  height: 50px;
+  border-radius: 5px;
+  margin-left: 3.5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.splash-button {
+  width: 90%;
+  text-align: center;
+}
+
+.splash-button.white {
+  color: #fff;
+  font-size: 24px;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+.splash-button.black {
+  color: #1a06b3;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+/* Log in Page */
+
+.login-page {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-header {
+  margin-top: 0;
+  width: 100%;
+  background-color: #3f6ada;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* margin: auto 10px; */
+}
+
+.arrow-back-icon {
+  font-size: 24px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.log-in-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: #fff;
+  font-size: 20px;
+  background-color: #3f6ada;
+  border: none;
+  cursor: pointer;
+}
+
+.input-form {
+  width: 300px;
+  height: 30px;
+  font-size: 14px;
+  padding: 5px 10px;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  box-shadow: 0 1em 2em #ccc;
+  margin: 2px;
+}
+
+.input-div {
+  width: 200px;
+}
+
+.input-form:hover,
+.input-form:focus {
+  outline: none;
+}
+
+.container-pic {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid lightgrey;
+  box-shadow: 2px 3px 4px #ccc;
+  border-radius: 5px;
+  margin: 5px;
+  text-decoration: none;
+  color: rgb(33, 31, 31);
+}
+
+.container-pic img {
+  width: 70px;
+  height: 70px;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 1px solid rgb(211, 205, 205);
+  margin: 5px 0 5px 10px;
+}
+
+.name-time {
+  width: 40%;
+  height: 80px;
+  margin-top: -10px;
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: normal;
+
+  /* border:1px solid  black; */
+
+  /* margin: 0; */
+}
+
+.name-time h2 {
+  font-size: 24px;
+  font-family: 'Times New Roman', Times, serif;
+  font-style: normal;
+  font-weight: 100;
+}
+
+.time-and-date {
+  margin-top: -9px;
+  margin-right: 20px;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.amount-dolar {
+  margin-right: 20px;
+  font-size: 16px;
+}
+
+.add-new-item {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 10px;
+  width: 98%;
+  height: 60px;
+  background-color: green;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.add-new {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 8px 30px;
+  cursor: pointer;
+}
+
+.container-details {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #fff;
+  width: 95%;
+  margin-top: 10px;
+  box-shadow: 0 3px 3px #bbb;
+}
+
+.name-image {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  margin-left: 20px;
+}
+
+.name-image h2,
+.transaction-date h2 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.name-image img {
+  width: 150px;
+  height: 150px;
+}
+
+span {
+  font-size: 24px;
+}
+
+.transaction-date {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  margin-left: 20px;
+  margin-right: 50px;
+}
+
+.amount-dolar-total {
+  margin-left: 20px;
+  margin-right: 50px;
+}
